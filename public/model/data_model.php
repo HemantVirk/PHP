@@ -46,6 +46,19 @@ class data_model
             echo "Error executing query: " . $e->getMessage();
         }
     }
+    public function selectQuery($query, $params = [])
+    {
+        try {
+            echo $query;
+            print_r($params);
+            $statement = $this->connection->prepare($query, $params);
+            $res = $statement->fetchAll();
+            print_r($res);
+            die;
+        } catch (PDOException $e) {
+            echo "Error executing query: " . $e->getMessage();
+        }
+    }
 }
 
 ?>

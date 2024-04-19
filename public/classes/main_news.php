@@ -6,6 +6,12 @@ class main_news
     public function __construct(){
         $this->model = new main_news_model();
     }
+    public function fun_insert_news() {
+        $this->model->fun_insert_news();
+    }
+    public function get_insert_news() {
+        var_dump($this->model->get_insert_news());
+    }
 }
 
 ?>
