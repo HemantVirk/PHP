@@ -1,6 +1,5 @@
 <?php
-require_once($model_path ."data_model.php");
-class main_news_model extends data_model
+class NewsModel
 {
     public function fun_insert_news()
     {
@@ -11,12 +10,11 @@ class main_news_model extends data_model
             "Example full content",
             'TOI'
         ];
-        return data_model::executeQuery($sql, $params);
-
+        return DATABASE->executeQuery($sql, $params);
     }
-    public function get_insert_news() {
+    public function get_insert_news()
+    {
         $sql = "SELECT * FROM aunt_rossy.news";
-        $res = data_model::selectQuery($sql);
+        $res = DATABASE->selectQuery($sql);
     }
 }
-?>

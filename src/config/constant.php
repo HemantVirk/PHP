@@ -3,12 +3,18 @@
 define('DS',DIRECTORY_SEPARATOR);
 define('BACK_DOT','..');
 define('SITE_ROOT',BACK_DOT.DS."src".DS);
+
+define('APP_ROOT',SITE_ROOT."app.php");
+
 define('CONFIG_ROOT',SITE_ROOT."config".DS);
-define('CONTROLLER_ROOT',SITE_ROOT."controller".DS);
-define('MODEL_ROOT',SITE_ROOT."model".DS);
-define('ROUTER_ROOT',SITE_ROOT."router".DS);
+define('CORE_ROOT',SITE_ROOT."core".DS);
+define('MODULES_ROOT',SITE_ROOT."modules".DS);
+define('ROUTES_ROOT',SITE_ROOT."routes".DS);
 define('SERVICES_ROOT',SITE_ROOT."services".DS);
 define('UTILS_ROOT',SITE_ROOT."utils".DS);
+
+//Comman File Paths
+define('CONFIG_PATH',CONFIG_ROOT."config.php");
 
     
 //Methods Allowed
