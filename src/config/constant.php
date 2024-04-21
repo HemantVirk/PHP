@@ -25,6 +25,7 @@ define("POST", "POST");
 //Request & Respose Standard Keys
 define("STATUS_CODE", 'status_code');
 define("DATA", 'data');
+define("STATUS", 'status');
 define("ERROR", 'error');
 define("MSG", 'msg');
 define("LOG", 'log');
@@ -41,3 +42,13 @@ define("APP_TITLE", "Afwaah");
 
 //keys
 define("IS_ADMIN", "is_admin");
+
+define('DB_ERROR_CODES', 
+ [  
+    '1062' => 'PRIMARY KEY VOILATION',
+    '1064' => 'QUERY BUILD FAILED',
+    '1452' => 'FOREIGN KEY VOILATION',
+    '1146' => 'TABLE NOT EXIST',
+    '1046' => 'DATABASE NOT SELECTED',
+    '1049' => 'DATABASE NOT EXIST'
+]);

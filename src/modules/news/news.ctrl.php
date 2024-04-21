@@ -4,27 +4,30 @@ require_once(MODULES_ROOT . "news" . DS . "news.model.php");
 
 class NewsCtrl extends ResponseTemplate
 {
-    protected $model;
+    private NewsModel $_newsModel;
 
     public function __construct()
     {
+        $this->initDB();
+
+        $this->_newsModel = new NewsModel();
+
         parent::__construct();
-        $this->model = new NewsModel();
     }
 
     #[\Override]
     public function setData()
     {
-        $this->addData("news", "bsaudh");
+        $this->addData("news_list", $this->_newsModel->getNewsList());   
     }
 
     public function fun_insert_news()
     {
-        $this->model->fun_insert_news();
+        $this->_newsModel->fun_insert_news();
     }
 
     public function get_insert_news()
     {
-        var_dump($this->model->get_insert_news());
+        var_dump($this->_newsModel->get_insert_news());
     }
 }

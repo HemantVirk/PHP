@@ -6,4 +6,9 @@ if (REQUEST->path == "/news") {
     new NewsCtrl();
 }
 
+if(CONFIG->inDebug && REQUEST->path == "/phpinfo") {
+    phpinfo();
+    die();
+}
+
 new ResponseTemplate();

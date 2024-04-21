@@ -7,7 +7,6 @@ class ResponseTemplate
 
     private $_result;
     protected $data;
-    protected $_db;
 
     public function __construct()
     {
@@ -25,7 +24,6 @@ class ResponseTemplate
 
         $this->_endResponse();
     }
-
 
     protected function setData()
     {
@@ -50,7 +48,7 @@ class ResponseTemplate
 
     protected function initDB()
     {
-        $this->_db = new DataBase();
+        define("DATABASE", new Database());
     }
 
     private function _initResponse()
@@ -62,7 +60,6 @@ class ResponseTemplate
 
     private function _endResponse()
     {
-        ob_flush();
         if (REQUEST->method == POST || REQUEST->ishttpRequest) {
 
             header('Content-Type: application/json');
@@ -75,5 +72,12 @@ class ResponseTemplate
             }
         }
         die();
+    }
+
+    protected function redirect($url) {
+        if(isset($url)) {
+            header('Location: ' . $url);
+            die;
+        }
     }
 }
