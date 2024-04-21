@@ -6,10 +6,10 @@ class DataBase
 
     public function __construct()
     {
-        $host = AfConfig::$dbHost;
-        $username = AfConfig::$dbUserName;
-        $password = AfConfig::$dbPassword;
-        $database = AfConfig::$dbName;
+        $host = CONFIG->dbHost;
+        $username = CONFIG->dbUserName;
+        $password = CONFIG->dbPassword;
+        $database = CONFIG->dbName;
 
         try {
             $dsn = "mysql:host={$host};dbname={$database}";
@@ -20,10 +20,9 @@ class DataBase
         }
     }
 
-    public function disconnect()
+    public function __destruct()
     {
         $this->connection = null;
-        echo "Disconnected from MySQL database<br>";
     }
 
     public function executeQuery($query, $params = [])
@@ -50,5 +49,3 @@ class DataBase
         }
     }
 }
-
-define("DATABASE", new DataBase());

@@ -13,9 +13,9 @@ class NewsCtrl extends ResponseTemplate
     }
 
     #[\Override]
-    public function sendJson()
+    public function setData()
     {
-        RESPONSE->addData("news", "bsaudh");
+        $this->addData("news", "bsaudh");
     }
 
     public function fun_insert_news()

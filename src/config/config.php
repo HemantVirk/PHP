@@ -1,8 +1,11 @@
 <?php
-class AfConfig {
-    public static $dbHost = "localhost";
-    public static $dbUserName = 'root';
-    public static $dbPassword = '#Rks@369';
-    public static $dbName = '';
+class Config
+{
+    public $inDebug = false;
+    public $dbHost = "localhost";
+    public $dbUserName = 'root';
+    public $dbPassword = '#Rks@369';
+    public $dbName = '';
 }
-?>  
+
+define("CONFIG", new Config());
